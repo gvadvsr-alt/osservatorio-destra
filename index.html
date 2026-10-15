@@ -337,7 +337,7 @@ html[data-theme="prisma"] .story.big .thumb:after{background:linear-gradient(180
     </aside>
   </div>
   <div class="foot">
-    <span class="mono">Prototipo non pubblicato · dati: feed Refracto Cripto Capitale (staging) · generato 15/10/2026 18:51</span>
+    <span class="mono">Prototipo non pubblicato · dati: feed Refracto Cripto Capitale (staging) · generato 15/10/2026 18:55</span>
     <span class="mono">20 item nel feed · finestra 12–15 ottobre 2026</span>
   </div>
 </div>
@@ -388,7 +388,7 @@ function openStory(id){ const d = FULL[id]; if(!d) return;
 function closeStory(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeStory(); });
 
-setLang('it');
+setLang('it'); apply();   /* chip 'TUTTO' attivo al caricamento */
 </script>
 </body>
 </html>
