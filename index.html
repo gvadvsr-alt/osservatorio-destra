@@ -7,16 +7,18 @@
 <title>Osservatorio Destra — briefing giovedì 15 ottobre 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700&family=Fraunces:opsz,wght@9..144,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..500&family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#ffffff; --paper:#f7f7f7; --surface-2:#f0f0f0; --ink:#0d0f16; --ink-2:#33363f; --muted:#80828a;
-  --line:#dedede; --line-2:#cccccc; --accent:#d71920; --accent-2:#b01218; --on-accent:#ffffff; --bar:#d71920;
-  --chip-bg:transparent; --chip-border:#cccccc; --badge-sec-bg:#f0f0f0; --badge-sec-ink:#0d0f16;
-  --up:#2EBD85; --down:#F6465D;
-  --display:"Source Serif 4",Georgia,serif; --body:"Inter",Arial,sans-serif; --mono:"Inter",Arial,sans-serif;
-  --body-size:17px; --dek-size:16px; --h2:24px; --h2-big:44px; --h2-grid:18px; --stat:52px;
-  --chip-radius:0px; --card-radius:4px; --ctrl-radius:4px; --maxw:1280px; --scale:1;
+  --highlight:#C1121F; --on-highlight:#ffffff;   /* rosso sobrio: blocchi pieni */
+  --bg:#0F1216; --paper:#15191F; --surface-2:#1C2128; --ink:#EFEBE3; --ink-2:#CFC9BF; --muted:#918B80;
+  --line:#262B33; --line-2:#333A44;
+  --accent:#D8CFC0; --accent-2:#C1121F; --on-accent:#0F1216; --bar:#C1121F;   /* testo/eyebrow in avorio caldo, rosso come blocco */
+  --chip-bg:#1C2128; --chip-border:#333A44; --badge-sec-bg:#1C2128; --badge-sec-ink:#EFEBE3;
+  --up:#5FA37A; --down:#C1121F;
+  --display:"Newsreader",Georgia,serif; --body:"Inter",Arial,sans-serif; --mono:"Inter",Arial,sans-serif;
+  --body-size:17px; --dek-size:16px; --h2:25px; --h2-big:46px; --h2-grid:19px; --stat:54px;
+  --chip-radius:0px; --card-radius:0px; --ctrl-radius:0px; --maxw:1280px; --scale:1;
 }
 html[data-theme="prisma"]{
   /* alternativa: token letti da prismanews.com/en */
@@ -35,7 +37,7 @@ body[data-lang="en"] [data-lang="it"]{display:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:22px}
-.brand .mark{width:26px;height:26px;background:var(--accent);display:inline-block;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.brand .mark{width:26px;height:26px;background:var(--highlight,var(--accent));display:inline-block;clip-path:polygon(50% 0,100% 100%,0 100%)}
 .brand small{font-family:var(--mono);font-size:11.5px;font-weight:400;color:var(--muted);letter-spacing:.14em}
 .actions{display:flex;align-items:center;gap:10px}
 .icon{height:34px;min-width:34px;padding:0 10px;border:1px solid var(--line);display:inline-grid;place-items:center;font-family:var(--mono);font-size:12px;background:transparent;color:var(--ink);cursor:pointer;border-radius:var(--ctrl-radius);text-decoration:none}
@@ -46,7 +48,7 @@ body[data-lang="en"] [data-lang="it"]{display:none}
 .edition{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
 .edition .l{color:var(--accent);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
 .ticker{display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--line);padding:12px 0;overflow:hidden}
-.tick-label{background:var(--accent);color:var(--on-accent);font-weight:600;font-family:var(--mono);font-size:11px;letter-spacing:.12em;padding:5px 9px;white-space:nowrap;position:relative;z-index:2;border-radius:var(--ctrl-radius)}
+.tick-label{background:var(--highlight,var(--accent));color:var(--on-highlight,var(--on-accent));font-weight:600;font-family:var(--mono);font-size:11px;letter-spacing:.12em;padding:5px 9px;white-space:nowrap;position:relative;z-index:2;border-radius:var(--ctrl-radius)}
 .tick-wrap{flex:1;overflow:hidden;min-width:0}
 .tick-track{display:flex;gap:22px;white-space:nowrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;animation:slide 70s linear infinite}
 .tick-sep{color:var(--accent);margin-left:22px}
@@ -55,7 +57,7 @@ body[data-lang="en"] [data-lang="it"]{display:none}
 .chips{display:flex;gap:8px;flex-wrap:wrap;padding:16px 0;border-bottom:1px solid var(--line)}
 .chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;padding:9px 16px;border:1px solid var(--chip-border);background:var(--chip-bg);color:var(--ink);border-radius:var(--chip-radius);cursor:pointer}
 .chip:hover{border-color:var(--accent);color:var(--accent)}
-.chip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.chip.on{background:var(--highlight,var(--accent));border-color:var(--highlight,var(--accent));color:var(--on-highlight,var(--on-accent));font-weight:600}
 .layout{display:grid;grid-template-columns:1fr 360px;gap:32px;padding:24px 0 40px}
 .sectlabel{display:flex;align-items:center;gap:14px;margin:6px 0 18px}
 .sectlabel:after{content:"";flex:1;height:1px;background:var(--line)}
@@ -76,7 +78,7 @@ html[data-theme="vertical"] .story:hover .thumb img{filter:grayscale(.2) saturat
 html[data-theme="prisma"] .thumb:after{background:linear-gradient(180deg,rgba(244,237,220,.06),rgba(27,23,20,.10))}
 html[data-theme="vertical"] .thumb:after{background:linear-gradient(180deg,rgba(24,26,32,.06),rgba(24,26,32,.48)),linear-gradient(0deg,rgba(252,213,53,.10),rgba(252,213,53,.03));pointer-events:none}
 .badge-ai,.badge-sec{position:absolute;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;padding:4px 7px;border-radius:2px}
-.badge-ai{top:10px;left:10px;background:var(--accent);color:var(--on-accent);font-weight:600}
+.badge-ai{top:10px;left:10px;background:var(--highlight,var(--accent));color:var(--on-highlight,var(--on-accent));font-weight:600}
 .badge-sec{bottom:10px;left:10px;background:var(--badge-sec-bg);color:var(--badge-sec-ink)}
 h2{font-family:var(--display);font-weight:600;letter-spacing:-.015em;line-height:1.15;margin:14px 0 8px;font-size:var(--h2)}
 .story.big h2{font-size:var(--h2-big);margin-top:16px}
@@ -109,7 +111,7 @@ html[data-theme="prisma"] .story.big .thumb:after{background:linear-gradient(180
 .bar-row{display:grid;grid-template-columns:104px 1fr 26px;align-items:center;gap:8px;margin:7px 0}
 .bar-row .label{white-space:nowrap}
 .bar-row .val{text-align:right}
-.bar{height:9px;background:var(--bar);border-radius:2px}
+.bar{height:9px;background:var(--highlight,var(--bar);border-radius:2px}
 .legend{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
 .discl p{margin:6px 0 0;font-size:calc(16px*var(--scale));color:var(--ink-2)}
 .discl a{color:var(--accent)}
@@ -335,7 +337,7 @@ html[data-theme="prisma"] .story.big .thumb:after{background:linear-gradient(180
     </aside>
   </div>
   <div class="foot">
-    <span class="mono">Prototipo non pubblicato · dati: feed Refracto Cripto Capitale (staging) · generato 15/10/2026 18:26</span>
+    <span class="mono">Prototipo non pubblicato · dati: feed Refracto Cripto Capitale (staging) · generato 15/10/2026 18:51</span>
     <span class="mono">20 item nel feed · finestra 12–15 ottobre 2026</span>
   </div>
 </div>
